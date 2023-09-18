@@ -1,0 +1,233 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Silkscreen', sans-serif;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    user-select: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+#gameover-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2em;
+    text-align: center;
+    z-index: 3;
+}
+
+#mute {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-size: 3.5em;
+    padding: 15px 20px;
+    color: white !important;
+}
+
+#gameover-dialog > div {
+    display: flex;
+    row-gap: 5px;
+    flex-direction: column;
+}
+
+#gameover-score {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+#restart {
+    background-color: rgb(123, 200, 7);
+    border-radius: 10px;
+    color: white;
+    padding: 2px;
+    font-size: 1.5rem;
+}
+
+#restart:hover {
+    background-color: rgb(102, 168, 4);
+    cursor: pointer;
+}
+
+
+#score {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    color: white;
+    font-size: 50px;
+}
+
+#player {
+    float: left;
+    position: sticky;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0);
+    height: 10vw;
+    max-width: 100px;
+    max-height: 100px;
+    width: 10vw;
+    background: white;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.pavement {
+    width: 100%;
+    height: 25vh;
+    background-color: rgb(123, 200, 7);
+    position: relative;
+    z-index: -1;
+}
+
+.bush {
+    position: absolute;
+    z-index: -1;
+    height: 8vmin;
+    width: 8vmin;
+    background-color: rgb(79, 129, 4);
+}
+
+.flower {
+    position: absolute;
+    z-index: -1;
+    height: 5vmin;
+    left: 50%;
+    width: 2vmin;
+    background-color: rgb(215, 24, 107);
+}
+
+.flower::after {
+    content: "";
+    position: absolute;
+    height: 1.5vmin;
+    width: 1.5vmin;
+    background-color: rgb(247, 255, 4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flower::before {
+    content: "";
+    position: absolute;
+    height: 2vmin;
+    width: 5vmin;
+    background-color: rgb(215, 24, 107);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.rocks {
+    position: absolute;
+    z-index: -1;
+    /* left: 10%;
+    top: 30%; */
+    height: 2vmin;
+    width: 2vmin;
+    background-color: darkgreen;
+}
+
+.rocks > div {
+    position: absolute;
+    background-color: rgb(98, 98, 98);
+    height: 100%;
+    width: 100%;
+}
+
+.rocks > div:nth-child(1) {
+    left: 0%;
+    top: 0%;
+}
+
+.rocks > div:nth-child(2) {
+    left: 110%;
+    top: 0%;
+}
+
+.rocks > div:nth-child(3) {
+    left: 50%;
+    top: 110%;
+}
+
+.road {
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 20vw;
+    max-height: 250px;
+    background-color: rgb(0, 0, 0);
+}
+
+.stripes {
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.stripes li {
+    background-color: yellow;
+    height: 1vh;
+    width: 100%;
+    max-width: 300px;
+    min-width: 50px;
+}
+
+.car {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 15vw;
+    max-height: 200px;
+    min-width: 100px;
+    width: 25vw;
+    max-width: 400px;
+    left: -400px;
+    z-index: 2;
+}
+
+@keyframes car-move-1 {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: min(-400px, -20vw);
+    }
+}
+
+@keyframes car-move-2 {
+    0% {
+        left: min(-400px, -20vw);
+    }
+
+    100% {
+        left: 100%;
+    }
+}
