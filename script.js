@@ -193,4 +193,4 @@ window.addEventListener('scroll', function () {
 
 setInterval(generate, 10);
 setInterval(updateScore, 10);
-setInterval(removeComponents, 1000);
+// setInterval(removeComponents, 1000);
